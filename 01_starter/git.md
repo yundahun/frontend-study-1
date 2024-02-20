@@ -72,3 +72,5 @@ git pull origin main
 중간중간 git status, git log 명령어도 사용해보기
 
 수정사항 발생
+수정사항 발생2
+수정사항 발생3
