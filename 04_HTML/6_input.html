@@ -72,7 +72,49 @@
     - 사용자가 요소 내의 텍스트를 클릭하면 <label>입력이 토글되기 때문(히트 영역이 증가함)
   -->
 
-  <!-- 예제는 편의를 위해 label을 매번 사용하지 않겠지만 실제 개발시 input 요소에 label을 같이 사용해 줄 것! -->
+  <!-- 예제는 편의를 위해 label을 매번 사용하지 않겠지만 
+    실제 개발시 input 요소에 label을 같이 사용해 줄 것! -->
+
+  <br>
+
+  <!-- 값을 미리 체크 -->
+  <label>
+    <input type="checkbox"> Apple
+  </label>
+  <label>
+    <input type="checkbox" checked> Banana
+  </label>
+
+  <hr>
+
+  <!-- 라디오 버튼 -->
+  <!-- type만 썼을 경우 -->
+  <label>
+    <input type="radio"> Apple
+  </label>
+  <label>
+    <input type="radio"> Banana
+  </label>
+
+  <br>
+
+  <!-- name 속성으로 그룹화 -->
+  <label>
+    <input type="radio" name="fruits" checked> Apple
+  </label>
+  <label>
+    <input type="radio" name="fruits"> Banana
+  </label>
+
+  <br>
+
+  <!-- name이 다른 경우 그룹화 안됨 -->
+  <label>
+    <input type="radio" name="fruits1" checked> Apple
+  </label>
+  <label>
+    <input type="radio" name="fruits2"> Banana
+  </label>
 
 </body>
 </html>
