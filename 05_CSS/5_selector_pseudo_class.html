@@ -30,10 +30,10 @@
       color: lime;
     }
 
-    .box:active {
+    /* .box:active {
       width: 300px;
       background-color: royalblue;
-    }
+    } */
 
     /* :focus (요소가 포커스(활성화)되면 선택) */
     /* HTML 대화형(interactive=상호작용) 요소에 사용 가능
@@ -43,6 +43,11 @@
     /* Tab 키로 확인 가능 */
     input:focus {
       background-color: orange;
+    }
+
+    .box:focus {
+      width: 300px;
+      background-color: royalblue;
     }
 
     /* 2. (특정한 요소를 선택하는) 가상 클래스 선택자 */
@@ -87,11 +92,15 @@
     } */
 
     /* Quiz: 자식들 중 앞에 3개만 선택 */
-    .fruits *:nth-child(n) {
+    /* n이 앞에 나와야 동작함!! */
+    /* .fruits *:nth-child(-n+3) {
+      color: red;
+    } */
+    
+    /* :not(s) (선택자 s를 제외) */
+    .fruits *:not(span, h3) {
       color: red;
     }
-
-
   </style>
 </head>
 <body>
@@ -102,6 +111,9 @@
   <hr>
 
   <input type="text">
+
+  <!-- tabindex 속성을 통해 focus 될 수 있는 요소를 만들 수 있음 -->
+  <!-- <div class="box" tabindex="1"></div> -->
 
   <hr>
 
