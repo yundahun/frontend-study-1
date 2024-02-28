@@ -7,7 +7,7 @@
 
   <style>
     .main-background {
-      height: 500px;
+      height: 550px;
       background-image: url("images/shoes.jpg");
       background-repeat: no-repeat;
       background-position: center;
@@ -19,6 +19,8 @@
       /* padding-top: 50px; */
       /* 2. 테두리가 안붙게 살짝 떨어뜨림(꼼수) */
       padding: 0.1px;
+
+      position: relative;
     }
     .main-title {
       color: #fff;
@@ -46,7 +48,25 @@
     }
 
     /* 겹치는 레이아웃 만들기 */
+    .sub-description {
+      /* 화면이 작을 때는 부모 width의 80%만, 넓어지면 최대 700px 까지 */
+      width: 80%;
+      max-width: 700px;
+      background-color: #eee;
+      padding: 10px;
+      border-radius: 20px;
+      margin: 0 auto;
 
+      /* relative 사용 시 */
+      /* position: relative;
+      top: 100px; */
+
+      /* absolute 사용 시 */
+      position: absolute;
+      bottom: -100px;
+      left: 0;
+      right: 0;
+    }
 
     .history {
       background-color: #aeaeae;
@@ -73,6 +93,8 @@
         Adipisci ducimus itaque dolorem similique quae sint possimus!<br>
       </p>
     </div>
+
+    <!-- <div style="background-color: yellow;">테스트용 div</div> -->
   </div>
 
   <div class="history">
