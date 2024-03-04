@@ -41,6 +41,54 @@
     /* 실전 */
     .form-container {
       background-color: #fff;
+      padding: 30px;
+      width: 80%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 10px;
+      font-size: 20px;
+      border: 2px solid #eee;
+      border-radius: 6px;
+      outline: none;
+      transition: 0.5s;
+    }
+    .form-input:focus {
+      border: 2px solid #aaa;
+    }
+
+    .name-box {
+      display: flex;
+    }
+    .name-box > div:first-child {
+      /* width: 50%; */
+      flex: 1;
+      padding: 10px 10px 10px 0;
+    }
+    .name-box > div:last-child {
+      /* width: 50%; */
+      flex: 1;
+      padding: 10px 0 10px 10px;
+    }
+
+    .btn-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .btn-send {
+      padding: 8px 40px;
+      color: #fff;
+      background-color: lightsalmon;
+      border: none;
+      border-radius: 4px;
+      transition: 0.5s;
+    }
+    .btn-send:hover {
+      background-color: coral;
     }
   </style>
 </head>
@@ -70,9 +118,37 @@
       <form>
         <h3>Contact Us</h3>
         <p>
-          <label for="">Your Email</label>
+          <label for="email">Your Email</label>
         </p>
-        <input type="" id="" class="form-input">
+        <input type="email" id="email" class="form-input" placeholder="email@example.com">
+
+        <div class="name-box">
+          <div>
+            <p>
+              <label for="firstname">First Name</label>
+            </p>
+            <input type="text" id="firstname" class="form-input">
+          </div>
+          <div>
+            <p>
+              <label for="lastname">Last Name</label>
+            </p>
+            <input type="text" id="lastname" class="form-input">
+          </div>
+        </div>
+
+        <p>
+          <label for="msg">Message</label>
+        </p>
+        <textarea id="msg" class="form-input"></textarea>
+
+        <div class="btn-box">
+          <div>
+            <input type="checkbox" id="agree">
+            <label for="agree">Agree</label>
+          </div>
+          <button type="button" class="btn-send">SEND</button>
+        </div>
       </form>
     </div>
   </div>
