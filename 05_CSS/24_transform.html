@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body {
+      padding: 0 40px;
+    }
+
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: cornflowerblue;
+    }
+
+    .container-1 .item-1 {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+
+      /* 요소를 변환시키는 속성: 변환 함수(); */
+      transform: rotate(45deg); /* deg(Degree): 각도 */
+      transform: rotate(45deg) scale(1.3);
+    }
+
+    .translate {
+      /* transform: translate(20px, 20px); */
+      /* transform: translateX(20px); */
+      transform: translateY(20px);
+    }
+
+    .scale {
+      /* transform: scale(1.5); */
+      /* transform: scale(0.7); */
+      /* transform: scaleX(2); */
+      transition: 1s;
+    }
+    /* Quiz: 요소가 서서히 확대되는 효과 */
+    .scale:hover {
+      transform: scale(1.2);
+    }
+
+    .rotate {
+      /* 2D */
+      /* transform: rotate(45deg); */
+      /* 3D */
+      /* transform: rotateX(45deg); */
+      /* 원근법 추가(제일 앞에 작성해야 함!) */
+      /* transform: perspective(300px) rotateX(45deg); */
+      transform: perspective(300px) rotateY(45deg);
+    }
+
+    .skew {
+      /* transform: skewX(20deg); */
+      /* transform: skewX(-20deg); */
+      /* transform: skewY(20deg); */
+      transform: skewY(-20deg);
+    }
+  </style>
+</head>
+<body>
+  <h1>transform(변환)</h1>
+  <div class="container-1">
+    <div class="item-1">Hello world!</div>
+  </div>
+
+  <h2>translate:</h2>
+  <div class="translate">Hello world!</div>
+
+  <h2>scale:</h2>
+  <div class="scale">Hello world!</div>
+
+  <h2>rotate:</h2>
+  <div class="rotate">Hello world!</div>
+
+  <h2>skew:</h2>
+  <div class="skew">Hello world!</div>
+
+
+</body>
+</html>
