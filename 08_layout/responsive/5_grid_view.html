@@ -47,23 +47,34 @@
     .col-10 { flex: 10; }
     .col-11 { flex: 11; }
     .col-12 { flex: 12; } */
+
+    /* 모바일 */
+    @media screen and (max-width: 768px) {
+      .row {
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+      }
+      [class*="col-"] {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
   <h1>Grid View(Grid System)</h1>
   <h2>화면을 12등분해서 레이아웃을 구성</h2>
   <div class="row">
-    <div class="box">3</div>
-    <div class="box">9</div>
+    <div class="box col-3">3</div>
+    <div class="box col-9">9</div>
   </div>
   <div class="row">
-    <div class="box">6</div>
-    <div class="box">6</div>
+    <div class="box col-6">6</div>
+    <div class="box col-6">6</div>
   </div>
   <div class="row">
-    <div class="box">3</div>
-    <div class="box">5</div>
-    <div class="box">4</div>
+    <div class="box col-3">3</div>
+    <div class="box col-5">5</div>
+    <div class="box col-4">4</div>
   </div>
 </body>
 </html>
