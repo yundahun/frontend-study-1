@@ -100,6 +100,9 @@
       /* 방법2: translateX()를 써도 구현 가능 */
       transition: 0.5s;
     }
+    .m-nav.active {
+      right: 0;
+    }
     .m-nav div {
       text-align: right;
     }
@@ -111,6 +114,22 @@
       768px 이하에서 
       .nav, .btn-group은 숨기고, .btn-hamburger는 보이도록 처리
     */
+    @media screen and (max-width: 768px) {
+      header .nav,
+      header .btn-group {
+        display: none;
+      }
+      header .btn-hamburger {
+        display: block;
+      }
+    }
+
+    /* 768px 이상에서 .m-nav 숨기기 */
+    @media screen and (min-width: 768px) {
+      .m-nav {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
@@ -161,6 +180,16 @@
     // 햄버거 버튼을 클릭하면 .m-nav 요소에 'active'라는 클래스 값 추가(in JS)
     // 닫기 버튼을 클릭하면 .m-nav 요소에 'active'라는 클래스 값 제거(in JS)
     // .m-nav 요소에 'active'라는 클래스 값이 있으면 요소 보이기!(in CSS)
+    const btnHamburger = document.querySelector('.btn-hamburger');
+    const btnClose = document.querySelector('.btn-close');
+    const mobileNav = document.querySelector('.m-nav');
+
+    btnHamburger.addEventListener('click', function () {
+      mobileNav.classList.add('active');
+    });
+    btnClose.addEventListener('click', function () {
+      mobileNav.classList.remove('active');
+    });
   </script>
 </body>
 </html>
