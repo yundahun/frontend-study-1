@@ -49,6 +49,68 @@
       font-size: inherit;
       color: var(--color-orange);
     }
+
+    header {
+      background-color: var(--color-background);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: relative;
+    }
+
+    header .logo {
+      font-size: 48px;
+      display: flex;
+      align-items: center;
+    }
+
+    header .nav__menu--main {
+      display: flex;
+    }
+    header .nav__menu--main li {
+      /* 만약 클릭할 수 있는 영역을 넓히려면 a태그에 패딩 넣기 */
+      padding: 8px 12px;
+    }
+    header .nav__menu--main li:hover {
+      background-color: var(--color-orange);
+      border-radius: 4px;
+    }
+
+    header .btn-group .btn + .btn {
+      margin-left: 10px;
+    }
+
+    header .btn-hamburger {
+      font-size: 48px;
+      position: absolute;
+      right: 32px;
+      display: none;
+    }
+
+    .m-nav {
+      width: 50%;
+      height: 100vh;
+      background-color: var(--color-background);
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      /* 방법1 */
+      right: -50%;
+      /* 방법2: translateX()를 써도 구현 가능 */
+      transition: 0.5s;
+    }
+    .m-nav div {
+      text-align: right;
+    }
+    .m-nav .btn-close {
+      font-size: 48px;
+    }
+
+    /* Quiz1
+      768px 이하에서 
+      .nav, .btn-group은 숨기고, .btn-hamburger는 보이도록 처리
+    */
   </style>
 </head>
 <body>
@@ -72,6 +134,33 @@
       <button type="button" class="btn">Sign In</button>
       <button type="button" class="btn">Sign Up</button>
     </div>
+
+    <a href="#" class="btn-hamburger">
+      <span class="material-icons">menu</span>
+    </a>
   </header>
+
+  <!-- 모바일용 슬라이드 메뉴 -->
+  <nav class="m-nav">
+    <div>
+      <a href="#" class="btn-close">
+        <span class="material-icons">close</span>
+      </a>
+    </div>
+    <ul>
+      <li><a href="#">메뉴1</a></li>
+      <li><a href="#">메뉴2</a></li>
+      <li><a href="#">메뉴3</a></li>
+      <li><a href="#">메뉴4</a></li>
+      <li><a href="#">메뉴5</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    // Quiz2
+    // 햄버거 버튼을 클릭하면 .m-nav 요소에 'active'라는 클래스 값 추가(in JS)
+    // 닫기 버튼을 클릭하면 .m-nav 요소에 'active'라는 클래스 값 제거(in JS)
+    // .m-nav 요소에 'active'라는 클래스 값이 있으면 요소 보이기!(in CSS)
+  </script>
 </body>
 </html>
