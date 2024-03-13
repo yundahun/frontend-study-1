@@ -248,10 +248,24 @@ header .main-menu .item .item__contents {
   position: fixed;
   width: 100%;
   left: 0;
-  display: none;
+  /* display: none; */
+
+  /* 슬라이드 효과 주기(1) */
+  /* 방법1: 고정 높이 */
+  /* height: 0; */
+  /* 방법2: 컨텐츠 높이 */
+  max-height: 0;
+  overflow: hidden;
 }
 header .main-menu .item:hover .item__contents {
-  display: block;
+  /* display: block; */
+
+  /* 슬라이드 효과 주기(2) */
+  /* 방법1: 고정 높이 */
+  /* height: 320px; */
+  /* 방법2: 컨텐츠 높이 */
+  max-height: 100vh;
+  transition: 1s;
 }
 
 header .main-menu .item .item__contents > ul {
