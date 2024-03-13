@@ -203,34 +203,34 @@ console.log(new Date().getFullYear());
 
 // (번외) JS로 슬라이드 메뉴 구현
 // 코드 개선이 필요해보임
-const mainMenuItems = document.querySelectorAll('header .main-menu .item');
-const itemContents = document.querySelectorAll('header .main-menu .item .item__contents');
+// const mainMenuItems = document.querySelectorAll('header .main-menu .item');
+// const itemContents = document.querySelectorAll('header .main-menu .item .item__contents');
 
-const menuHeight = [];
+// const menuHeight = [];
 
-itemContents.forEach(function (itemContent) {
-  menuHeight.push(itemContent.getBoundingClientRect().height);
-  itemContent.style.height = '0';
-  itemContent.style.overflow = 'hidden';
-} );
+// itemContents.forEach(function (itemContent) {
+//   menuHeight.push(itemContent.getBoundingClientRect().height);
+//   itemContent.style.height = '0';
+//   itemContent.style.overflow = 'hidden';
+// } );
 
-mainMenuItems.forEach(function (mainMenuItem, index) {
-  mainMenuItem.addEventListener('mouseenter', function () {
-    itemContents.forEach(function (itemContent) {
-      itemContent.style.height = '0';
-    });
+// mainMenuItems.forEach(function (mainMenuItem, index) {
+//   mainMenuItem.addEventListener('mouseenter', function () {
+//     itemContents.forEach(function (itemContent) {
+//       itemContent.style.height = '0';
+//     });
 
-    const itemContent = this.lastElementChild;
-    itemContent.style.transition = '1s';
-    itemContent.style.height = `${menuHeight[index]}px`;
-  });
-});
+//     const itemContent = this.lastElementChild;
+//     itemContent.style.transition = '1s';
+//     itemContent.style.height = `${menuHeight[index]}px`;
+//   });
+// });
 
-mainMenuItems.forEach(function (mainMenuItem) {
-  mainMenuItem.addEventListener('mouseleave', function () {
-    itemContents.forEach(function (itemContent) {
-      itemContent.style.transition = '0s';
-      itemContent.style.height = '0';
-    });
-  });
-});
+// mainMenuItems.forEach(function (mainMenuItem) {
+//   mainMenuItem.addEventListener('mouseleave', function () {
+//     itemContents.forEach(function (itemContent) {
+//       itemContent.style.transition = '0s';
+//       itemContent.style.height = '0';
+//     });
+//   });
+// });
