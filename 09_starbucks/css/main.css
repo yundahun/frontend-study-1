@@ -507,7 +507,7 @@ header .badges .badge {
 .promotion .swiper-pagination {
   position: absolute;
   bottom: 40px;
-  /* 헤더의 z-index가 9이기 때문에 1로 덮어씌움 
+  /* 헤더의 z-index가 9이고 페이지네이션의 z-index가 10이기때문에 1로 덮어씌움 
     아니면 헤더를 10보다 크게 해도 됨 */
   z-index: 1;
 }
