@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+  <style>
+    /* 바닐라 자바스크립트 슬라이드 */
+    .slides-container {
+      width: 400px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .slides-container .slides-wrapper {
+      display: flex;
+    }
+    .slides-container .slides-wrapper .slide {
+      width: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slides-container">
+    <div class="slides-wrapper">
+      <div class="slide">
+        <img src="https://via.placeholder.com/400x300" alt="sample">1
+      </div>
+      <div class="slide">
+        <img src="https://via.placeholder.com/400x300" alt="sample">2
+      </div>
+      <div class="slide">
+        <img src="https://via.placeholder.com/400x300" alt="sample">3
+      </div>
+      <div class="slide">
+        <img src="https://via.placeholder.com/400x300" alt="sample">4
+      </div>
+      <div class="slide">
+        <img src="https://via.placeholder.com/400x300" alt="sample">5
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const slideWrapper = document.querySelector('.slides-wrapper'); // 슬라이드 묶음
+    const slides = slideWrapper.querySelectorAll('.slide'); // 각각의 슬라이드들
+    const firstSlide = slideWrapper.querySelector('.slide:first-child'); // 첫번째 슬라이드
+    const lastSlide = slideWrapper.querySelector('.slide:last-child'); // 마지막 슬라이드
+    const slidesLength = slides.length;
+    let currentIndex = 0;
+
+    const clonedFirstChild = firstSlide.cloneNode(true);
+    const clonedLastChild = lastSlide.cloneNode(true);
+    slideWrapper.appendChild(clonedFirstChild);
+    slideWrapper.insertBefore(clonedLastChild, firstSlide);
+
+    slideWrapper.style.transform = 'translateX(-400px)';
+    let posX = 0;
+    setInterval(() => {
+      if (currentIndex <= slidesLength - 1) {
+        posX = -400 * (currentIndex + 2);
+        slideWrapper.style.transition = '0.3s';
+      } 
+      if (currentIndex === slidesLength) {
+        console.log('초기화');
+        posX = -400;
+        currentIndex = -1;
+      }
+      // console.log(posX);
+      slideWrapper.style.transform = `translateX(${posX}px)`;
+      currentIndex++;
+      setTimeout(() => {
+        slideWrapper.style.transition = '0s';
+      }, 300);
+    }, 1000);
+  </script>
+</body>
+</html>
