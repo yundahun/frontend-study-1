@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- * -->
+  <button type="button" onclick="changeColor()">배경색 바꾸기</button>
+
+  <script>
+    // 함수
+    // 여러 실행 코드들의 묶음(그룹화)
+    // 자주 사용하는 코드들(기능)을 저장했다가 필요할 때 호출해서 사용
+    // function 키워드를 사용하여 정의 => ES6차에서는 화살표 함수를 사용
+
+    // 1) 함수 선언문: 기명 함수로 정의
+    // function 함수명(파라미터) {
+    //   실행코드;
+    // }
+
+    // 2) 함수 표현식: 익명 함수를 변수에 할당
+    // 변수 = function (파라미터) {
+    //   실행코드;
+    // };
+
+    // 위와 같이 정의된 함수는 즉시 실행되지 않음
+    // 메모리에 할당되어 있다가 함수가 호출되면 실행
+    // 1) 함수명();
+    // 2) 변수명();
+
+    function greeting() {
+      document.write('hello<br>');
+    };
+    greeting();
+
+    // (참고) 함수 선언문과 함수 표현식의 차이점
+    // 함수 선언문은 호이스팅(끌어 올리기)이 일어난다.
+    // 해당 스코프(유효범위)의 최상단으로 끌어올려진 것과 같은 현상(실제로 끌어올리는 것은 아님)
+    // 변수나 함수 선언이 코드 실행보다 먼저 메모리에 할당(저장)되는 과정
+    let count = 0;
+
+    myFunc();
+
+    function myFunc() {
+      count++;
+      document.write('hello ' + count, '<br>');
+    }
+
+    myFunc();
+
+    // theFunc(); // 초기화 전에는 쓸 수 없음
+
+    const theFunc = function () {
+      count++;
+      document.write('bye ' + count, '<br>');
+    }
+
+    theFunc();
+
+    // 버튼 클릭할 때마다 배경색이 바뀌도록 함수 만들기
+    // (위에 body 태그 참조*)
+    const colors = ['yellow', 'aqua', 'purple', 'white'];
+
+    const bodyTag = document.querySelector('body');
+    let index = 0;
+    function changeColor() {
+      // Quiz: index가 4일 때 0으로 초기화
+      // if (index >= 4) {
+      if (index >= colors.length) {
+        index = 0;
+      }
+      bodyTag.style.backgroundColor = colors[index++];
+    }
+  </script>
+</body>
+</html>
