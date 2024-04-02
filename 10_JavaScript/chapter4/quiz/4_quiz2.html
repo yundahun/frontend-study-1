@@ -19,7 +19,27 @@
 
 
     // 풀이2
-    
+    function pow(x, n) {
+      // let result = 1;
+      let result = x;
+
+      // for (let i = 1; i <= n; i++) {
+      for (let i = 1; i < n; i++) {
+        // result = result * x;
+        result *= x;
+      }
+      
+      return result;
+    }
+
+    const x = prompt('x?');
+    const n = prompt('n?');
+
+    if (n < 1) {
+      alert('양의 정수이어야 합니다.');
+    } else {
+      document.write(pow(x, n));
+    }
   </script>
 </body>
 </html>
