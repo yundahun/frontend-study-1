@@ -18,7 +18,27 @@
 
 
     // 풀이2
-    
+    const person = {
+      firstName: 'Goni',
+      lastName: 'Kim',
+      age: 30,
+      gender: '남자',
+      hobby: ['민턴', '스노우보드', '로드바이크'],
+      getFullName: function () {
+        return this.firstName + ' ' + this.lastName;
+      },
+      speak: function () {
+        return this.firstName + '(이)가 말을 합니다. "배드민턴 칠 사람?"';
+      }
+    };
+
+    document.write(person.firstName, '<br>');
+    document.write(person.lastName, '<br>');
+    document.write(person.age, '<br>');
+    document.write(person['gender'], '<br>');
+    document.write(person['hobby'], '<br>');
+    document.write(person.getFullName(), '<br>');
+    document.write(person.speak(), '<br>');
   </script>
 </head>
 <body>
