@@ -48,6 +48,58 @@
     pos = str.lastIndexOf('locate', 15);
     document.write(pos, '<br>');
 
+    // (ES6차) includes()
+    // 지정된 문자열이 포함된 경우 true를 반환
+    // 그렇지 않으면 false를 반환
+    pos = str.includes('locate');
+    document.write(pos, '<br>');
+    pos = str.includes('locate', 15);
+    document.write(pos, '<br>');
+
+    // 실습: 사용자로부터 입력받은 이메일 주소 유효성 검사
+    // 정규표현식을 안쓰는 경우(실무에서는 정규식 사용!!)
+    document.write('<h4>실습: 이메일 주소 유효성 검사</h4>');
+    // const userEmail = prompt('당신의 이메일 주소는?');
+    // const arrUrl = ['.co.kr', '.com', '.net', '.or.kr', '.go.kr'];
+
+    // let check1 = false;
+    // let check2 = false;
+
+    // if (userEmail.indexOf('@') > 0) { // @가 있는지 검사
+    //   check1 = true;
+    // }
+
+    // for (let i = 0; i < arrUrl.length; i++) {
+    //   if (userEmail.indexOf(arrUrl[i]) > 0) { // 도메인 검사
+    //     check2 = true;
+    //     break;
+    //   }
+    // }
+
+    // if (check1 && check2) {
+    //   document.write(userEmail, '<br>');
+    // } else {
+    //   alert('이메일 형식이 잘못되었습니다.');
+    // }
+
+    // (참고) 정규 표현식(정규식)
+    // 문자열에서 특정 문자 조합을 찾기 위한 패턴
+    // 주로 회원가입 시 유효성 검사(패스워드, 이메일, 전화번호 포맷 검증 등)에 사용
+
+    // 4) slice()
+    // 시작 위치와 종료 위치를 주면, 문자열에서 해당 부분을 잘라내서 반환
+    document.write('<h4>문자열 추출</h4>');
+    str = 'Apple, Banana, Kiwi';
+    let res = str.slice(7, 13);
+    document.write(res, '<br>');
+
+    // 두번째 인수인 종료 위치를 생략하면, 시작 위치에서 문자열의 마지막 위치까지 잘라내서 반환
+    res = str.slice(7);
+    document.write(res, '<br>');
+
+    // 첫번째 인수인 시작 위치를 음수로 주면, 문자열의 끝에서부터 거꾸로 읽게 됨
+    res = str.slice(-12);
+    document.write(res, '<br>');
 
   </script>
 </body>
