@@ -21,7 +21,18 @@
     // 즉, 원본도 같이 변경됨
 
     // 풀이1
-    
+    const copyArr1 = originArr.slice(0, 4);
+    console.log(copyArr1);
+    const copyArr2 = originArr.slice(0);
+    console.log(copyArr2);
+    const copyArr3 = originArr.slice();
+    console.log(copyArr3);
+    const copyArr4 = [].concat(originArr);
+    console.log(copyArr4);
+
+    // (참고) ES6차 spread 연산자
+    const copyArr5 = [...originArr];
+    console.log(copyArr5);
   </script>
 </head>
 <body>
