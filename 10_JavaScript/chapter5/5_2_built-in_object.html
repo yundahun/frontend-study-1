@@ -562,6 +562,54 @@
     }
     document.write('<br>');
 
+
+    // 4. Date 객체
+    // 날짜와 시간을 다루는 객체로 날짜와 시간에 대한 정보를 보여줌
+    document.write('<h1>Date 객체</h1>');
+
+    // 1) Date() 생성자
+    // Date 객체 생성 4가지 방식
+    // 변수 = new Date();
+    const now = new Date(); // 현재 날짜와 시간을 가져옴
+    document.write(now, '<br>');
+    
+    // 변수 = new Date(year, month, day, hours, minutes, seconds, milliseconds);
+    // 이때 month는 0부터 시작
+    const d1 = new Date(2021, 6, 24, 10, 33, 30, 0);
+    document.write(d1, '<br>');
+
+    // 변수 = new Date(milliseconds);
+    const d2 = new Date(0); // 1970년 1월 1일
+    document.write(d2, '<br>');
+    const d3 = new Date(100000000000); // 1970년 1월 1일 + 100000000000ms
+    document.write(d3, '<br>');
+    
+    // 변수 = new Date(date string);
+    // 날짜 문자열로 Date 객체 생성
+    const d4 = new Date('October 15, 2022 11:30:00');
+    document.write(d4, '<br>');
+    const d5 = new Date('2022-10-15T11:30:00');
+    document.write(d5, '<br>');
+
+    // 2) Get 함수
+    document.write('<h3>Get 함수</h3>');
+    // 오늘 날짜에 대한 정보를 가지고 있는 객체 생성
+    const today = new Date();
+    const nowYear = today.getFullYear();
+    const nowMonth = today.getMonth(); // 0~11: 현재 월보다 1 적게 나옴
+    const nowDate = today.getDate();
+    const nowDay = today.getDay(); // 0~6: 일~토
+
+    document.write('<h4>오늘 날짜 정보</h4>');
+    document.write(`날짜 정보(기본 포맷): ${today}<br>`);
+    document.write(`연도: ${nowYear}<br>`);
+    document.write(`월: ${nowMonth}<br>`);
+    document.write(`일: ${nowDate}<br>`);
+    document.write(`요일: ${nowDay}<br>`);
+    document.write(`${nowYear}/${nowMonth + 1}/${nowDate}<br>`); // 직접 포맷팅
+
+
+
   </script>
 </body>
 </html>
