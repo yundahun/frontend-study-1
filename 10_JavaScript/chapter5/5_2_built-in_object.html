@@ -692,10 +692,30 @@
     // 2) JSON.parse()
     // 서버로부터 응답받은 데이터는 문자열 형태임
     // parse 함수를 사용하여 Object 데이터로 변환
-    const text = '{"name":"Goni","age":30,"isAdmin":true,"courses":["html","css","js"],"wife":null}';
+    // const text = '{"name":"Goni","age":30,"isAdmin":true,"courses":["html","css","js"],"wife":null}';
+    const text = `{
+      "name":"Goni",
+      "age":30,
+      "isAdmin":true,
+      "courses":["html","css","js"],
+      "wife":null}
+    `;
 
     const obj = JSON.parse(text);
     console.log(obj);
+
+    // (참고)
+    // Object -- serialize(직렬화) --> JSON(string 타입)
+    // Object <-- deserialize(역직렬화) -- JSON(string 타입)
+
+    // Quiz: 객체를 JSON으로 바꾼 후 다시 객체로 바꾸기
+    // user1을 JSON 형태의 문자열로 바꾼 다음 이를 다시 객체로 바꾼 후 user2 변수에 저장해보세요.
+    const user1 = {
+      name: 'Goni Kim',
+      age: 35
+    };
+    const user2 = JSON.parse(JSON.stringify(user1));
+    console.log(user2);
   </script>
 </body>
 </html>
