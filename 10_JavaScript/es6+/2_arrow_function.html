@@ -72,6 +72,7 @@
     }
 
     // 풀이1
+    const add2 = (num1, num2) => num1 + num2;
 
     // Quiz2
     function ask(question, yes, no) {
@@ -86,6 +87,16 @@
     );
     
     // 풀이2
+    const ask2 = (question, yes, no) => {
+      if (confirm(question)) yes();
+      else no();
+    };
+
+    ask2(
+      '동의하십니까?',
+      () => alert('동의하셨습니다.'),
+      () => alert('취소 버튼을 누르셨습니다.')
+    );
   </script>
 </body>
 </html>
