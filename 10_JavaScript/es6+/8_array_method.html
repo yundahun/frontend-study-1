@@ -31,6 +31,13 @@
       { firstName: 'Zero', lastName: 'Cho' },
       { firstName: 'Velopert', lastName: 'Kim' }
     ];
+
+    // const newPersons = persons.map((item) => {
+    //   // return item.firstName + ' ' + item.lastName;
+    //   return `${item.firstName} ${item.lastName}`;
+    // });
+    const newPersons = persons.map(item => `${item.firstName} ${item.lastName}`);
+    console.log(newPersons);
   </script>
 </body>
 </html>
