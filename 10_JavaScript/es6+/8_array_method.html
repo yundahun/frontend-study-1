@@ -11,6 +11,13 @@
   <input type="number" id="ageToCheck" value="30">
   <button type="button" onclick="searchFunc()">검색</button>
 
+  <!-- ** -->
+  <div class="fruits">
+    <p>Apple</p>
+    <p>Banana</p>
+    <p>Orange</p>
+  </div>
+
   <script>
     // 유용한 배열 메소드(ES5)
 
@@ -88,6 +95,111 @@
     ];
 
     // Quiz: 배열의 filter()함수를 사용하여 id 값이 2인 상품을 제거해보세요.
+    // const newProducts = products.filter((product) => {
+    //   return product.id !== '2';
+    // });
+    const newProducts = products.filter(product => product.id !== '2');
+    console.log(newProducts);
+
+    // 3. array.reduce(function(total, currentValue, currentIndex), initialValue)
+    // 배열의 각 요소를 순회하며 콜백 함수의 실행값을 누적하여 반환
+    // 원래 배열을 변경하지 않음
+
+    // 배열의 모든 숫자에 반올림하여 총합 구하기
+    const floatNumbers = [15.5, 2.3, 1.1, 4.7];
+    // const sum = floatNumbers.reduce((total, num) => {
+    //   return total + Math.round(num); // 0 + 16 + 2 + 1 + 5
+    // }, 0);
+    const sum = floatNumbers.reduce((total, num) => total + Math.round(num), 0);
+    console.log(sum);
+
+    // 주의! 초기값이 없는 경우 실행 결과가 달라질 수 있음
+    // 15.5 + 2 + 1 + 5
+    const sum2 = floatNumbers.reduce((total, num) => total + Math.round(num));
+    console.log(sum2);
+
+    // 사용 예: 주로 배열에 담긴 데이터의 합계를 구하는 데 가장 많이 사용
+    // (장바구니 기능에서 총 금액 구할 때)
+
+
+    // 새로운 배열 메소드(ES6)
+
+    // 1. Array.from(object, mapFunction)
+    // 배열처럼 보이지만 배열이 아닌 객체(유사 배열)를 받아서 실제 배열로 변환해 반환
+    // 변환할 수 없으면 빈 배열을 반환
+    // 적용 가능한 예: 인덱스와 길이 속성(length)이 있는 객체나 반복 가능한 객체
+
+    // 1) 문자열에서 배열 만들기
+    const strArray = Array.from('ABCDEFG');
+    console.log(strArray);
+
+    // 2-1) NodeList에서 배열 만들기
+    // ** 참조
+    const fruits = document.querySelectorAll('.fruits p');
+    console.log(fruits); // 3개의 p태그 객체를 포함한 NodeList객체
+
+    // fruits를 실제 배열로 변환
+    const fruitsArray = Array.from(fruits);
+    console.log(fruitsArray);
+
+    // 변환 후 map() 함수 사용 가능
+    // p태그의 텍스트 내용을 가져와서 새로운 배열 만들기
+    // 예상 결과: ['Apple', 'Banana', 'Orange']
+    // const fruitsName = fruitsArray.map((fruit) => {
+    //   return fruit.textContent;
+    // });
+    const fruitsName = fruitsArray.map(fruit => fruit.textContent);
+    console.log(fruitsName);
+
+    // 2-2) 두번째 인수 mapFunction을 이용
+    const fruitsName2 = Array.from(fruits, fruit => fruit.textContent);
+    console.log(fruitsName2);
+
+    // 2. Array.of(가변 인자)
+    // 전달받은 모든 인자값으로 배열을 생성
+    const digits = Array.of(1, 2, 3, 4, 5);
+    console.log(digits);
+
+    // 3. array.find(function(currentValue, index))
+    // 제공된 테스트 함수를 충족하는 배열의 첫번째 요소를 반환
+    // 충족하는 요소가 없으면 undefined를 반환
+
+    // 배열의 요소 중 3보다 큰 첫번째 요소를 반환
+    const array = [1, 2, 3, 4, 5];
+    const found = array.find((e) => {
+      return e > 3;
+    });
+    console.log(found);
+    console.log(array.find(e => e > 10)); // 없으면 undefined
+
+    // 사용 예: 배열에서 고유한 값(예: id값)으로 특정 요소를 찾을 때 유용
+    const foundProduct = products.find((product) => {
+      return product.id === '3';
+    });
+    console.log(foundProduct);
+
+    // 4. array.findIndex(function(currentValue, index))
+    // 제공된 테스트 함수를 충족하는 배열의 첫번째 요소의 인덱스를 반환
+    // 충족하는 요소가 없으면 -1을 반환
+    const greetings = ['hello', 'hi', 'byebye', 'goodbye', 'hi'];
+
+    const hiIndex = greetings.findIndex((e) => {
+      return e === 'hi';
+    });
+    console.log(hiIndex);
+    console.log(greetings.findIndex(e => e === 'hey')); // 없으면 -1
+
+    // 5. array.some()과 array.every()
+    // some(): 조건과 일치하는 요소가 있는지 검색하고 첫번째 일치하는 요소를 찾으면 바로 중지
+    // every(): 모든 요소가 주어진 조건과 일치하는지 여부를 확인
+    const numArray = [1, 2, 3, 4, 5, 6, 1, 2, 3, 1];
+
+    const arraySome = numArray.some(e => e > 2); // 일부, 인덱스 2에서 중지
+    console.log(arraySome); // true
+    
+    const arrayEvery = numArray.every(e => e > 2); // 모든
+    console.log(arrayEvery); // false
+    console.log(numArray.every(e => e >= 1)); // true
   </script>
 </body>
 </html>
