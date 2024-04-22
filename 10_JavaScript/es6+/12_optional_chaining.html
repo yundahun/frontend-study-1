@@ -75,6 +75,22 @@
       }
     ];
     // 선택적 속성: education, university, graduation 이라고 가정
+
+    // 대학 졸업 연도에 접근하고 싶다면..?
+    let graduationYear;
+    for (const ceo of ceos) {
+      if (ceo.education &&
+          ceo.education.university &&
+          ceo.education.university.graduation) {
+        graduationYear = ceo.education.university.graduation.year;
+      }
+    }
+
+    // 옵셔널 체이닝 사용
+    for (const ceo of ceos) {
+      graduationYear = ceo.education?.university?.graduation?.year;
+      console.log(graduationYear);
+    }
   </script>
 </body>
 </html>
