@@ -6,7 +6,7 @@ function LikeButton() {
   return React.createElement(
     'button', // 태그
     { onClick: () => setIsCliked(true) }, // 속성
-    'Like'
+    isClicked ? 'You liked this.' : 'Like' // 자식 요소들
   );
 }
 
