@@ -34,10 +34,28 @@ const styles = {
 };
 // 사용할 이미지 경로: https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png
 
+// 댓글들은 반복되므로 재사용 가능한 컴포넌트로 만듦
 function Comment(props) {
   return (
-    <div>
-      
+    <div style={styles.wrapper}>
+      {/* 사람 모양의 프로필 이미지 */}
+      <div style={styles.imageContainer}>
+        <img 
+          src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" 
+          alt="아바타 이미지" 
+          style={styles.image}
+        />
+      </div>
+
+      {/* 댓글 작성자와 내용 */}
+      <div style={styles.contentContainer}>
+        {/* <span style={styles.nameText}>김재현</span>
+        <span style={styles.contentText}>제가 만든 컴포넌트입니다.</span> */}
+
+        {/* Quiz: 작성자와 내용을 props로 받아서 출력하기 */}
+        <span style={styles.nameText}>{props.name}</span>
+        <span style={styles.contentText}>{props.content}</span>
+      </div>
     </div>
   );
 }
