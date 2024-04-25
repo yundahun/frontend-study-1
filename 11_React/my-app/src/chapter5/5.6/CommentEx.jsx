@@ -1,5 +1,9 @@
 import React from 'react';
 
+function formatDate(date) {
+  return date.toLocaleDateString();
+}
+
 function CommentEx(props) {
   return (
     <>
