@@ -9,6 +9,7 @@ import Clock from './chapter4/Clock';
 import PropUse from './chapter5/5.3/PropsUse';
 import CommentEx from './chapter5/5.6/CommentEx';
 import CommentList from './chapter5/CommentList';
+import Counter from './chapter7/7.2/Counter';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -31,7 +32,10 @@ root.render(
   //     avatarUrl: 'http://placekitten.com/50/50'
   //   }}   
   // />
-  <CommentList />
+  // <CommentList />
+
+  // 7장 예제
+  <Counter />
 );
 
 // 4장 예제
