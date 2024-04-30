@@ -21,7 +21,11 @@ function Mailbox(props) {
         falsy이면 && 뒤에 있는 표현식은 건너뛰지만 falsy 표현식이 반환된다는 것에 주의
         (즉, falsy 표현식에 따라 화면에 출력될 수도 있음)
       */}
-      
+      {false && <h1>Messages: {unreadMessages.length}</h1>}
+      {false}
+
+      {unreadMessages.length && <h1>Messages: {unreadMessages.length}</h1>}
+      {0}
     </>
   );
 }
