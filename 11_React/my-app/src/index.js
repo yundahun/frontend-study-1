@@ -16,6 +16,7 @@ import ConfirmButton from './chapter8/ConfirmButton';
 import Greeting from './chapter9/9.1/Greeting';
 import LoginControl from './chapter9/9.2/LoginControl';
 import Mailbox from './chapter9/9.3/Mailbox';
+import LoginControlRefactoring from './chapter9/9.3/LoginControlRefactoring';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -52,7 +53,8 @@ root.render(
   // <Greeting isLoggedIn={true} />
   // <LoginControl />
   // <Mailbox unreadMessages={['React', 'Re: React', 'Re:Re: React']} />
-  <Mailbox unreadMessages={[]} />
+  // <Mailbox unreadMessages={[]} />
+  <LoginControlRefactoring />
 );
 
 // 4장 예제
