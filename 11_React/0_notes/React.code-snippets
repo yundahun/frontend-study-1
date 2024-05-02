@@ -49,12 +49,16 @@
 	"useState": {
 		"prefix": "useState",
 		"body": [
+			"import { useState } from 'react';",
+			"",
 			"const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:});"
 		]
 	},
 	"useEffect": {
 		"prefix": "useEffect",
 		"body": [
+			"import { useEffect } from 'react';",
+			"",
 			"useEffect(() => {",
 			"\t${1:}",
 			"\treturn () => {",
