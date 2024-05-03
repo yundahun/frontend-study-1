@@ -26,6 +26,7 @@ import NameForm from './chapter11/11.2/NameForm';
 import EssayForm from './chapter11/11.3/EssayForm';
 import FlavorForm from './chapter11/11.3/FlavorForm';
 import Reservation from './chapter11/11.4/Reservation';
+import ReservationRefactoring from './chapter11/11.4/ReservationRefactoring';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -76,7 +77,8 @@ root.render(
   // <NameForm />
   // <EssayForm />
   // <FlavorForm />
-  <Reservation />
+  // <Reservation />
+  <ReservationRefactoring />
 );
 
 // 4장 예제
