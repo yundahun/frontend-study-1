@@ -1,0 +1,11 @@
+.header--dark {
+  width: 100%;
+  background: #1c1c1c;
+  color: #fff;
+  display: flex;
+  padding: 0 20px;
+}
+
+.inner {
+  padding: 0 20px;
+}
