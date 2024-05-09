@@ -1,5 +1,6 @@
 import { useState } from "react";
 import UnitCounter from "./UnitCounter";
+import UnitInput from "./UnitInput";
 
 function UnitCalculator() {
   // Shared State 실습
@@ -18,6 +19,16 @@ function UnitCalculator() {
       </label>
       <hr />
       <UnitCounter length={length} onLengthChange={setLength} />
+      <br />
+      <UnitInput unit="mm" length={length} />
+      <br />
+      <UnitInput unit="cm" length={length} />
+      <br />
+      <UnitInput unit="m" length={length} />
+      <br />
+      <UnitInput unit="km" length={length} />
+      <br />
+      <UnitInput unit="inch" length={length} />
       <br />
       <UnitCounter length={length} onLengthChange={setLength} />
     </>

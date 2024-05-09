@@ -28,7 +28,8 @@ function UnitInput(props) {
 
   return (
     <>
-      <input type="text" disabled />
+      <input type="text" value={length * unitConvert[unit].ratio} disabled />
+      {unitConvert[unit].name}
     </>
   );
 };
