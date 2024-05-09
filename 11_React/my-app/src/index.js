@@ -32,6 +32,7 @@ import TextInputWithFocusButton from './chapter7/7.6/TextInputWithFocusButton';
 import FileInput from './chapter11/11.3/FileInput';
 import UnitCalculator from './chpater12/UnitCalculator';
 import WelcomeDialog from './chapter13/13.1.1.1/WelcomeDialog';
+import SplitPaneSection from './chapter13/13.1.1.2/SplitPaneSection';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -92,7 +93,8 @@ root.render(
   // <UnitCalculator />
 
   // 13장 예제
-  <WelcomeDialog />
+  // <WelcomeDialog />
+  <SplitPaneSection />
 );
 
 // 4장 예제
