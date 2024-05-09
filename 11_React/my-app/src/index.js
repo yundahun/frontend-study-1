@@ -28,6 +28,8 @@ import FlavorForm from './chapter11/11.3/FlavorForm';
 import Reservation from './chapter11/11.4/Reservation';
 import ReservationRefactoring from './chapter11/11.4/ReservationRefactoring';
 import SignUp from './chapter11/SignUp';
+import TextInputWithFocusButton from './chapter7/7.6/TextInputWithFocusButton';
+import FileInput from './chapter11/11.3/FileInput';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -54,6 +56,7 @@ root.render(
 
   // 7장 예제
   // <Counter />
+  // <TextInputWithFocusButton />
 
   // 8장 예제
   // <Toggle />
@@ -80,7 +83,8 @@ root.render(
   // <FlavorForm />
   // <Reservation />
   // <ReservationRefactoring />
-  <SignUp />
+  // <SignUp />
+  <FileInput />
 );
 
 // 4장 예제
