@@ -31,6 +31,7 @@ import SignUp from './chapter11/SignUp';
 import TextInputWithFocusButton from './chapter7/7.6/TextInputWithFocusButton';
 import FileInput from './chapter11/11.3/FileInput';
 import UnitCalculator from './chpater12/UnitCalculator';
+import WelcomeDialog from './chapter13/13.1.1.1/WelcomeDialog';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -88,7 +89,10 @@ root.render(
   // <FileInput />
 
   // 12장 예제
-  <UnitCalculator />
+  // <UnitCalculator />
+
+  // 13장 예제
+  <WelcomeDialog />
 );
 
 // 4장 예제
