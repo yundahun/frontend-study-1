@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 // 0. styled-components 설치하기
 // npm install styled-components
@@ -42,6 +42,19 @@ const Button = styled.button`
   &:hover {
     background: #b3b3b3;
   }
+
+  /* 4. 여러 줄의 스타일 구문을 조건부로 설정해야 하는 경우 css를 불러와 사용 */
+  ${props => props.$inverted &&
+    css`
+      background: white;
+      color: #1f1f1f;
+      border: 2px solid white;
+      &:hover {
+        background: #1f1f1f;
+        color: white;
+      }
+    `
+  }
 `;
 
 function StyledPage() {
@@ -55,6 +68,8 @@ function StyledPage() {
         DOM 요소로 렌더링되는 것을 방지하기위해 붙여 
         임시 prop으로 전환할 수 있다. */}
       <Button $dark>Dark</Button>
+
+      <Button $inverted>Inverted</Button>
     </Wrapper>
   );
 };
