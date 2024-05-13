@@ -18,6 +18,22 @@ import styled, { css } from "styled-components";
 const Wrapper = styled.div`
   padding: 1rem;
   background: gray;
+
+  /* 6. 반응형 디자인 
+    - 일반 CSS를 사용할 때와 똑같이 미디어 쿼리 사용 가능
+    - 리액트스럽게 react-responsive 라이브러리 사용
+  */
+  /* 기본적으로 가로 길이를 1024px에 가운데 정렬하고
+    가로 크기가 작아짐에 따라 크기를 줄이고 768px 미만이 되면 꽉 채우기 */
+    width: 1024px;
+    margin: 0 auto;
+    @media screen and (max-width: 1024px) {
+      width: 768px;
+    }
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+
 `;
 // vscode-styled-components 익스텐션 설치하기
 
@@ -43,6 +59,11 @@ const Button = styled.button`
     background: #b3b3b3;
   }
 
+  /* 버튼 사이 간격 띄우기 */
+  & + & {
+    margin-left: 1rem;
+  }
+
   /* 4. 여러 줄의 스타일 구문을 조건부로 설정해야 하는 경우 css를 불러와 사용 */
   ${props => props.$inverted &&
     css`
@@ -55,6 +76,12 @@ const Button = styled.button`
       }
     `
   }
+`;
+
+// 5. 스타일 확장(커스텀) 하기
+// Button 컴포넌트에 모서리를 둥글게하는 스타일이 추가된 컴포넌트
+const RoundedButton = styled(Button)`
+  border-radius: 16px;
 `;
 
 function StyledPage() {
@@ -70,6 +97,8 @@ function StyledPage() {
       <Button $dark>Dark</Button>
 
       <Button $inverted>Inverted</Button>
+
+      <RoundedButton>Rounded</RoundedButton>
     </Wrapper>
   );
 };
