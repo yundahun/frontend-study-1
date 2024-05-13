@@ -7,10 +7,10 @@ const Wrapper = styled.div`
 `;
 
 const Block = styled.div`
-  padding: ${props => props.padding};
+  padding: ${props => props.$padding};
   border: 1px solid black;
   border-radius: 1rem;
-  background-color: ${props => props.backgroundColor};
+  background-color: ${props => props.$backgroundColor};
   color: white;
   font-size: 2rem;
   font-weight: bold;
@@ -39,10 +39,14 @@ function Blocks() {
   return (
     <Wrapper>
       {/* Quiz: 배열 반복 렌더링 및 스타일링 완성 */}
-      {blockItems.map(() => {
+      {blockItems.map((blockItem) => {
         return (
-          <Block>
-            {}
+          <Block
+            key={blockItem.label}
+            $padding={blockItem.padding}
+            $backgroundColor={blockItem.backgroundColor}
+          >
+            {blockItem.label}
           </Block>
         );
       })}
