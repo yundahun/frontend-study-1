@@ -11,17 +11,13 @@ const TodoListWrapper = styled.div`
 function TodoList({ todos }) {
   return (
     <TodoListWrapper>
-      {/* <TodoListItem />
-      <TodoListItem />
-      <TodoListItem /> */}
-
-      {todos.map((todo, index) => {
+      {todos.map(todo => {
         console.log(todo);
         return <TodoListItem key={todo.id} todo={todo} />;
       })}
 
       {/* map() 함수 실행 결과 */}
-      {[
+      {/* {[
         <TodoListItem  
           key={1} 
           todo={{
@@ -46,7 +42,7 @@ function TodoList({ todos }) {
             done: false
           }}
         />
-      ]}
+      ]} */}
 
     </TodoListWrapper>
   );
