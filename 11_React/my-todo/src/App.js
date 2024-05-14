@@ -57,11 +57,29 @@ function App() {
     };
 
     // 방법1
-    const copyTodos = [...todos];
-    copyTodos.push(todo);
-    setTodos(copyTodos); // 새로운 배열을 만들어 넣어줌
+    // const copyTodos = [...todos];
+    // copyTodos.push(todo);
+    // setTodos(copyTodos); // 새로운 배열을 만들어 넣어줌
+
+    // (편법)
+    // setTodos([...todos, todo]);
+
+    // 방법2 - 배열의 내장 함수 이용
+    setTodos(todos.concat(todo));
 
     nextId.current += 1; // nextId에 1씩 더하기
+  };
+
+  // todos 배열에서 id값으로 항목을 지우기 위한 함수
+  const handleRemove = (id) => {
+    // 방법1
+    // const copyTodos = [...todos];
+    // const targetIndex = todos.findIndex(todo => todo.id === id);
+    // copyTodos.splice(targetIndex, 1);
+    // setTodos(copyTodos);
+
+    // 방법2 - 배열의 내장 함수 이용
+    setTodos(todos.filter(todo => todo.id !== id));
   };
 
   return (
@@ -70,7 +88,7 @@ function App() {
       <GlobalStyle />
       <TodoTemplate>
         <TodoInsert onInsert={handleInsert} />
-        <TodoList todos={todos} />
+        <TodoList todos={todos} onRemove={handleRemove} />
       </TodoTemplate>
     </>
   );
