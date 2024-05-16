@@ -82,13 +82,22 @@ function App() {
     setTodos(todos.filter(todo => todo.id !== id));
   };
 
+  // todos 배열의 특정 요소를 수정하기 위한 함수
+  const handleToggle = (id) => {
+    // 방법1
+    const copyTodos = [...todos];
+    const targetIndex = todos.findIndex(todo => todo.id === id);
+    copyTodos[targetIndex].done = !copyTodos[targetIndex].done;
+    setTodos(copyTodos);
+  };
+
   return (
     <>
       <Reset />
       <GlobalStyle />
       <TodoTemplate>
         <TodoInsert onInsert={handleInsert} />
-        <TodoList todos={todos} onRemove={handleRemove} />
+        <TodoList todos={todos} onRemove={handleRemove} onToggle={handleToggle} />
       </TodoTemplate>
     </>
   );
