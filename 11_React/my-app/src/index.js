@@ -40,6 +40,7 @@ import StyledPage from './chapter15/StyledPage';
 import Blocks from './chapter15/theme/Blocks';
 import ThemeApp from './chapter15/theme/ThemeApp';
 import ComponentVariable from './chapter7/7.6/ComponentVariable';
+import CounterEffect from './chapter7/7.3/ex1/CounterEffect';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -67,7 +68,8 @@ root.render(
   // 7장 예제
   // <Counter />
   // <TextInputWithFocusButton />
-  <ComponentVariable />
+  // <ComponentVariable />
+  <CounterEffect />
 
   // 8장 예제
   // <Toggle />
