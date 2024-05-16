@@ -41,6 +41,9 @@ import Blocks from './chapter15/theme/Blocks';
 import ThemeApp from './chapter15/theme/ThemeApp';
 import ComponentVariable from './chapter7/7.6/ComponentVariable';
 import CounterEffect from './chapter7/7.3/ex1/CounterEffect';
+import TimerContainer from './chapter7/7.3/ex2/TimerContainer';
+import EffectSummary from './chapter7/7.3/ex3/EffectSummary';
+import EffectContainer from './chapter7/7.3/ex3/EffectContainer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -69,7 +72,10 @@ root.render(
   // <Counter />
   // <TextInputWithFocusButton />
   // <ComponentVariable />
-  <CounterEffect />
+  // <CounterEffect />
+  // <TimerContainer />
+  // <EffectSummary />
+  <EffectContainer />
 
   // 8장 예제
   // <Toggle />

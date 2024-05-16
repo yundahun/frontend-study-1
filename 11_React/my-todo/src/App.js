@@ -3,7 +3,8 @@ import reset, { Reset } from "styled-reset";
 import TodoTemplate from "./components/TodoTemplate";
 import TodoInsert from "./components/TodoInsert";
 import TodoList from "./components/TodoList";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 // 패키지 설치
 // npm install styled-components styled-reset react-icons
@@ -25,28 +26,35 @@ function App() {
   // id, 내용, 완료 여부
   // TodoList에 props로 전달
   const [todos, setTodos] = useState([
-    {
-      id: 1,
-      text: '수업 교안 작성하기',
-      done: true
-    },
-    {
-      id: 2,
-      text: '시험 채점하기',
-      done: true
-    },
-    {
-      id: 3,
-      text: '단계별 실습 예제 만들기',
-      done: false
-    },
+    // {
+    //   id: 1,
+    //   text: '수업 교안 작성하기',
+    //   done: true
+    // },
+    // {
+    //   id: 2,
+    //   text: '시험 채점하기',
+    //   done: true
+    // },
+    // {
+    //   id: 3,
+    //   text: '단계별 실습 예제 만들기',
+    //   done: false
+    // },
   ]);
+
+  // 로컬 스토리지에서 가져오기
+  useEffect(() => {
+    const dbTodos = JSON.parse(localStorage.getItem('todos')) || []; // 초기에 'todos'가 없으면 null을 반환함
+    setTodos(dbTodos);
+  }, []);
 
   // 로컬 스토리지에 저장하기(주의: DB가 아님, DB처럼 쓰면 안됨!!)
   // 추가, 수정, 삭제 각 함수에 로직을 넣어도 되지만, useEffect()를 활용하면 한번에 처리 가능!
   // todos가 변경될 때마다 실행해라!!
-
-
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
 
   // 새 객체를 만들 때마다 id값에 1씩 더해줘야 하는데 
   // id값은 렌더링되는 정보가 아님
@@ -57,7 +65,8 @@ function App() {
   // todos 배열에 새 할일 객체를 추가하기 위한 함수
   const handleInsert = (text) => {
     const todo = {
-      id: nextId.current,
+      // id: nextId.current,
+      id: uuidv4(),
       text,
       done: false
     };

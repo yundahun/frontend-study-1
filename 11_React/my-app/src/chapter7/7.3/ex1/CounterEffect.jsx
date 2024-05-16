@@ -10,8 +10,8 @@ function CounterEffect() {
 
     // DOM API로 문서 타이틀 업데이트
     document.title = `clicked ${count} times`;
-  }); // 렌더링 될 때마다 실행됨
-  // }, []); // 마운트 될 때만 실행됨
+  // }); // 렌더링 될 때마다 실행됨
+  }, []); // 마운트 될 때만 실행됨
 
   return (
     <>
