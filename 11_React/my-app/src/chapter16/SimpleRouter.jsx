@@ -1,3 +1,5 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 // 0. react-router-dom 설치하기
 // npm install react-router-dom
 
@@ -33,8 +35,12 @@
 
 function SimpleRouter() {
   return (
-    <>
-    </>
+    <BrowserRouter>
+      <Routes>
+        {/* /로 접속하면 MainPage 컴포넌트가 렌더링 */}
+        <Route />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
