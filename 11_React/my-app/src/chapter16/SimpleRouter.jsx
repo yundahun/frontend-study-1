@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import PlacePage from "./pages/PlacePage";
 import GamePage from "./pages/GamePage";
+import HotGamePage from "./pages/HotGamePage";
+import NewGamePage from "./pages/NewGamePage";
 
 // 0. react-router-dom 설치하기
 // npm install react-router-dom
@@ -46,6 +48,10 @@ function SimpleRouter() {
         <Route path="/" element={<MainPage />} />
         <Route path="/places" element={<PlacePage />} />
         <Route path="/games" element={<GamePage />} />
+
+        {/* 방법1. 서브 경로 설정 */}
+        <Route path="/games/hot" element={<HotGamePage />} />
+        <Route path="/games/new" element={<NewGamePage />} />
       </Routes>
     </BrowserRouter>
   );
