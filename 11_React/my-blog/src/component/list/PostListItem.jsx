@@ -22,10 +22,14 @@ const TitleText = styled.p`
   font-weight: 500;
 `;
 
-function PostListItem() {
+// 글의 제목만 표시해주는 컴포넌트
+function PostListItem(props) {
+  const { post: { id, title } } = props;
+
   return (
-    <>
-    </>
+    <Wrapper>
+      <TitleText>{title}</TitleText>
+    </Wrapper>
   );
 };
 
