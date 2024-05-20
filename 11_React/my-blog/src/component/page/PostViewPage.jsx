@@ -1,3 +1,8 @@
+import styled from "styled-components";
+import Button from "../ui/Button";
+import { useNavigate, useParams } from "react-router-dom";
+import data from "../../data.json";
+
 const Wrapper = styled.div`
   padding: 16px;
   width: calc(100% - 32px);
@@ -37,10 +42,40 @@ const CommentLabel = styled.p`
   font-weight: 600;
 `;
 
+// 글을 볼 수 있게 해주는 페이지(=컴포넌트)
 function PostViewPage() {
+  const navigate = useNavigate();
+
+  // URL 파라미터로 전달받은 postId값 가져오기
+  // useParams(): URL 파라미터 경로에 입력된 값을 가져올 수 있음
+  console.log(useParams());
+  const { postId } = useParams();
+
+  // 배열 전체에서 해당되는 글 찾기
+  const post = data.find(() => {
+    
+  });
+
   return (
-    <>
-    </>
+    <Wrapper>
+      <Container>
+        <Button 
+          title="뒤로 가기"
+          onClick={() => navigate('/')}
+        />
+        <PostContainer>
+          {/* 데이터 바인딩 */}
+          <TitleText></TitleText>
+          <ContentText></ContentText>
+        </PostContainer>
+
+        <CommentLabel>댓글</CommentLabel>
+        {/* 댓글 리스트 */}
+        {/* 댓글 입력 */}
+        {/* 댓글 등록 버튼 */}
+
+      </Container>
+    </Wrapper>
   );
 };
 

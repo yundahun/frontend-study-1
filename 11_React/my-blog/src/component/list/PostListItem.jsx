@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -26,8 +27,10 @@ const TitleText = styled.p`
 function PostListItem(props) {
   const { post: { id, title } } = props;
 
+  const navigate = useNavigate();
+
   return (
-    <Wrapper>
+    <Wrapper onClick={() => navigate(`/post/${id}`)}>
       <TitleText>{title}</TitleText>
     </Wrapper>
   );
